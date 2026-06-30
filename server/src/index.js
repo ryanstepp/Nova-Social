@@ -3,12 +3,16 @@ import express from "express";
 import cors from "cors";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { enrichTarget, id, now, publicUser, readDb, writeDb } from "./db.js";
 
 const app = express();
 const PORT = process.env.PORT || 4200;
 const JWT_SECRET = process.env.JWT_SECRET || "nova-dev-secret";
 const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:5173";
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const publicDir = path.join(__dirname, "..", "public");
 
 app.use(cors({ origin: CLIENT_ORIGIN, credentials: true }));
 app.use(express.json({ limit: "15mb" }));
@@ -520,6 +524,12 @@ app.post("/api/admin/reports/:id/:action", loadUser, requireAdmin, asyncRoute(as
   await writeDb(req.db);
   res.json(report);
 }));
+
+app.use(express.static(publicDir));
+app.get("*", (req, res, next) => {
+  if (req.path.startsWith("/api")) return next();
+  res.sendFile(path.join(publicDir, "index.html"));
+});
 
 app.use((err, req, res, next) => {
   console.error(err);

@@ -12,6 +12,23 @@ npm run dev
 Client: http://localhost:5173  
 API: http://localhost:4200/api
 
+## Docker
+
+Build and run the full production app from the project root:
+
+```bash
+docker build -t nova-social .
+docker run --rm -p 4200:4200 -e JWT_SECRET=replace-me nova-social
+```
+
+Then open http://localhost:4200.
+
+Or use Compose:
+
+```bash
+docker compose up --build
+```
+
 ## Demo Accounts
 
 - Admin: `admin@nova.test` / `password123`

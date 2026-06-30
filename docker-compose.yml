@@ -1,0 +1,17 @@
+services:
+  nova-social:
+    build:
+      context: .
+      args:
+        VITE_API_URL: /api
+    ports:
+      - "4200:4200"
+    environment:
+      PORT: 4200
+      JWT_SECRET: change-this-before-production
+      CLIENT_ORIGIN: http://localhost:4200
+    volumes:
+      - nova-data:/app/server/data
+
+volumes:
+  nova-data:

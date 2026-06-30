@@ -24,8 +24,8 @@ export async function seedData() {
     {
       id: "u_admin",
       email: "admin@nova.test",
-      username: "nova_admin",
-      displayName: "Nova Admin",
+      username: "ryanstepp",
+      displayName: "Ryan Stepp",
       passwordHash,
       avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80",
       bio: "Keeping Nova bright.",

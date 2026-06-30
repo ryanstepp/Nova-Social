@@ -31,7 +31,7 @@ docker compose up --build
 
 ## Demo Accounts
 
-- Admin: `admin@nova.test` / `password123`
+- Admin: `admin@nova.test` / `password123` (`@ryanstepp`)
 - Creator: `maya@nova.test` / `password123`
 - User: `leo@nova.test` / `password123`
 

@@ -147,7 +147,7 @@ function Auth() {
         <button type="button" className="ghost" onClick={() => setMode(mode === "signup" ? "login" : "signup")}>
           {mode === "signup" ? "I already have an account" : "Create a new account"}
         </button>
-        <p className="muted">Try `maya@nova.test`, `leo@nova.test`, or `admin@nova.test` with `password123`.</p>
+        <p className="muted">Try `maya@nova.test`, `leo@nova.test`, or admin `admin@nova.test` with `password123`.</p>
       </form>
     </div>
   );

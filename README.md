@@ -12,6 +12,14 @@ npm run dev
 Client: http://localhost:5173  
 API: http://localhost:4200/api
 
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+Preview app: http://localhost:4200
+
 ## Docker
 
 Build and run the full production app from the project root:

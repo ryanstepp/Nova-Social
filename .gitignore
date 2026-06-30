@@ -1,5 +1,6 @@
 node_modules/
 dist/
+server/public/
 .env
 server/data/*.json
 !server/data/.gitkeep
